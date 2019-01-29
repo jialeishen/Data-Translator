@@ -10,8 +10,8 @@ import math
 
 def csv2off(csvname,component, direction = False):
     csvdata = pd.read_csv(csvname)
-    d = 'direction' if direction else ''
-    myoff = open('csv2off_export_off_'+component+'_'+str(d)+'.off','w')
+    d = '_direction' if direction else ''
+    myoff = open('csv2off_export_off_'+component+d+'.off','w')
     myoff.write('NCOFF\n')
     columns = array(csvdata[['cell ID','x-coordinate','y-coordinate','z-coordinate','velocity-magnitude','x-velocity','y-velocity','z-velocity','pollutant']])
     vm = []
