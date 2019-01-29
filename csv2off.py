@@ -11,7 +11,7 @@ import math
 def csv2off(csvname,component, direction = False):
     csvdata = pd.read_csv(csvname)
     d = 'direction' if direction else ''
-    myoff = open('myoffdata_'+component+'_'+str(d)+'.off','w')
+    myoff = open('csv2off_export_off_'+component+'_'+str(d)+'.off','w')
     myoff.write('NCOFF\n')
     columns = array(csvdata[['cell ID','x-coordinate','y-coordinate','z-coordinate','velocity-magnitude','x-velocity','y-velocity','z-velocity','pollutant']])
     vm = []
@@ -62,7 +62,7 @@ def magnitude(v1):
 
 def main():
     print('Runing...')
-    csv2off('caseroom0123-data-indoor.csv','velocity',0)
+    csv2off('csv2off_import_csv.csv','velocity',1)
     print('Done!')
 
 if __name__ == "__main__":
