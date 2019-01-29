@@ -24,17 +24,17 @@ def csv2off(csvname,component, direction = False):
     for c in columns:
         if direction:
             if component == 'velocity' or component == 'v':
-                myoff.write(str(c[1])+' '+str(c[2])+' '+str(c[3])+' '+str(num2rgba(min(vm),max(vm),c[4])[0])+' '+str(num2rgba(min(vm),max(vm),c[4])[1])+' '+str(num2rgba(min(vm),max(vm),c[4])[2])+' '+str(num2rgba(min(vm),max(vm),c[4])[3])+' '+str(c[5]/magnitude([c[5],c[6],c[7]]))+' '+str(c[6]/magnitude([c[5],c[6],c[7]]))+' '+str(c[7]/magnitude([c[5],c[6],c[7]]))+'\n')
+                myoff.write(str(c[1])+' '+str(c[2])+' '+str(c[3])+' '+str(num2rgba(min(vm),max(vm),c[4])[0])+' '+str(num2rgba(min(vm),max(vm),c[4])[1])+' '+str(num2rgba(min(vm),max(vm),c[4])[2])+' 255 '+str(c[5]/magnitude([c[5],c[6],c[7]]))+' '+str(c[6]/magnitude([c[5],c[6],c[7]]))+' '+str(c[7]/magnitude([c[5],c[6],c[7]]))+'\n')
             elif component == 'pollutant' or component == 'p':
-                myoff.write(str(c[1])+' '+str(c[2])+' '+str(c[3])+' '+str(num2rgba(min(po),max(po),c[4])[0])+' '+str(num2rgba(min(po),max(po),c[4])[1])+' '+str(num2rgba(min(po),max(po),c[4])[2])+' '+str(num2rgba(min(po),max(po),c[4])[3])+' '+str(c[5]/magnitude([c[5],c[6],c[7]]))+' '+str(c[6]/magnitude([c[5],c[6],c[7]]))+' '+str(c[7]/magnitude([c[5],c[6],c[7]]))+'\n')
+                myoff.write(str(c[1])+' '+str(c[2])+' '+str(c[3])+' '+str(num2rgba(min(po),max(po),c[8])[0])+' '+str(num2rgba(min(po),max(po),c[8])[1])+' '+str(num2rgba(min(po),max(po),c[8])[2])+' 255 '+str(c[5]/magnitude([c[5],c[6],c[7]]))+' '+str(c[6]/magnitude([c[5],c[6],c[7]]))+' '+str(c[7]/magnitude([c[5],c[6],c[7]]))+'\n')
             else:
                 print('Error: Please select eithor "velocity" or "pollutant" to show')
                 break
         else:
             if component == 'velocity' or component == 'v':
-                myoff.write(str(c[1])+' '+str(c[2])+' '+str(c[3])+' '+str(num2rgba(min(vm),max(vm),c[4])[0])+' '+str(num2rgba(min(vm),max(vm),c[4])[1])+' '+str(num2rgba(min(vm),max(vm),c[4])[2])+' '+str(num2rgba(min(vm),max(vm),c[4])[3])+' 0 0 0 '+'\n')
+                myoff.write(str(c[1])+' '+str(c[2])+' '+str(c[3])+' '+str(num2rgba(min(vm),max(vm),c[4])[0])+' '+str(num2rgba(min(vm),max(vm),c[4])[1])+' '+str(num2rgba(min(vm),max(vm),c[4])[2])+' 255 0 0 0'+'\n')
             elif component == 'pollutant' or component == 'p':
-                myoff.write(str(c[1])+' '+str(c[2])+' '+str(c[3])+' '+str(num2rgba(min(po),max(po),c[4])[0])+' '+str(num2rgba(min(po),max(po),c[4])[1])+' '+str(num2rgba(min(po),max(po),c[4])[2])+' '+str(num2rgba(min(po),max(po),c[4])[3])+' 0 0 0 '+'\n')
+                myoff.write(str(c[1])+' '+str(c[2])+' '+str(c[3])+' '+str(num2rgba(min(po),max(po),c[8])[0])+' '+str(num2rgba(min(po),max(po),c[8])[1])+' '+str(num2rgba(min(po),max(po),c[8])[2])+' 255 0 0 0'+'\n')
             else:
                 print('Error: Please select eithor "velocity" or "pollutant" to show')
                 break
